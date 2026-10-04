@@ -1,0 +1,35 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+secrets.yaml
+secrets/
+
+# Berkshire letters are copyrighted, keep them out of the repo; also logs and caches
+data/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# Evaluation: per-question progress cache
+eval/.progress/
+
+# Personal learning notes and throwaway scripts
+docs/glossary.md
+docs/python_for_csharp.md
+scripts/step0_hello_llm.py
+scripts/try_agent.py

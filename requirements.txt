@@ -1,0 +1,40 @@
+# Install with: pip install -r requirements.txt
+
+# Web server
+fastapi>=0.115
+uvicorn[standard]>=0.30
+sse-starlette>=2.1
+pydantic>=2.8
+pydantic-settings>=2.4
+
+# HTTP client
+httpx[brotli]>=0.27
+
+# LLM orchestration
+langchain>=0.3
+langchain-openai>=0.2
+langchain-text-splitters>=0.3
+langgraph>=0.2
+langgraph-checkpoint-postgres>=2.0
+
+# Database
+psycopg[binary,pool]>=3.2
+pgvector>=0.3
+
+# Data
+yfinance>=0.2.50
+ddgs>=9.0
+beautifulsoup4>=4.12
+pypdf>=5.0
+fonttools>=4.50
+tiktoken>=0.8
+
+# MCP and observability
+fastmcp>=2.0
+langfuse>=2.50,<3
+
+# Development
+pytest>=8.3
+pytest-asyncio>=0.24
+ruff>=0.6
+mypy>=1.10

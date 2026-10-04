@@ -1,0 +1,34 @@
+[project]
+name = "buffett-lens"
+version = "0.1.0"
+description = "Research assistant that studies public companies through Warren Buffett's shareholder letters. Not financial advice."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"  # async tests run without a per-test decorator
+testpaths = ["tests"]
+markers = ["integration: needs the Postgres container from docker-compose (skipped if unavailable)"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+# Long lines are not errors (the formatter wraps code); RUF001-003 allow non-ASCII text.
+ignore = ["E501", "RUF001", "RUF002", "RUF003"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["app", "mcp_server", "scripts", "eval", "run.py"]
+check_untyped_defs = true
+disallow_untyped_defs = true       # every function needs parameter and return annotations
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+explicit_package_bases = true
+
+# Libraries without type annotations.
+[[tool.mypy.overrides]]
+module = ["yfinance.*", "ddgs.*", "langfuse.*", "sse_starlette.*", "pypdf.*", "tiktoken.*", "fastmcp.*"]
+ignore_missing_imports = true

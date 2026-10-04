@@ -1,0 +1,6 @@
+{
+  "_note": "ASSUMED list prices in USD per 1M tokens (input, output). Verify against the provider's pricing page; update before quoting any cost. On the free tier the real spend is $0, these numbers show what the same traffic would cost on a paid plan.",
+  "openai/gpt-oss-120b": [0.15, 0.60],
+  "openai/gpt-oss-20b": [0.075, 0.30],
+  "qwen/qwen3.8-27b": [0.29, 0.59]
+}
